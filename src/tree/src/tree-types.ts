@@ -20,7 +20,7 @@ export interface IInnerTreeNode extends ITreeNode {
 
 export const treeProps = {
   data: {
-    type: Object as PropType<Array<IInnerTreeNode>>,
+    type: Object as PropType<Array<ITreeNode>>,
     required: true
   }
 } as const
