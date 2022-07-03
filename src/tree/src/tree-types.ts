@@ -1,6 +1,6 @@
 import type { PropType, ExtractPropTypes } from 'vue'
 
-interface ITreeNode {
+export interface ITreeNode {
   label: string
   id?: string
   children?: ITreeNode[]
@@ -12,7 +12,7 @@ interface ITreeNode {
   disableToggle?: boolean
 }
 
-interface IInnerTreeNode extends ITreeNode {
+export interface IInnerTreeNode extends ITreeNode {
   parentId?: string
   level: number
   isLeaf?: boolean
