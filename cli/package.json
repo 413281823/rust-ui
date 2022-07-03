@@ -1,0 +1,24 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsnd ./src/index.ts create -t component",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "commander": "^9.1.0",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.2.2",
+    "kolorist": "^1.5.1",
+    "ts-node-dev": "^1.1.8"
+  },
+  "dependencies": {
+    "ts-node": "^10.8.1"
+  }
+}

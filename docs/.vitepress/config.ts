@@ -1,4 +1,5 @@
 //这里可以使用markdown-it插件
+
 import {demoBlockPlugin} from "vitepress-theme-demoblock";
 
 export default {
@@ -13,7 +14,13 @@ export default {
             {
                 text: '组件',
                 items: [
-                    { text: 'Button', link: '/component/Button/' },
+                    { text: 'Button', link: '/component/Button/' }
+                ]
+            },
+            {
+                text: '数据展示',
+                items: [
+                    {text: 'Tree 树', link:'/component/Tree/'}
                 ]
             }
         ]

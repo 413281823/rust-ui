@@ -1,11 +1,14 @@
 import { App } from 'vue'
-import Button from './src/button'
+import Tree from './src/tree'
 import { installComponent } from '../install'
 import type { SniperUIOptions } from '../_utils/global-config'
-export { Button }
 
+// 具名导出
+export { Tree }
+
+// 导出插件
 export default {
   install(app: App, options?: SniperUIOptions) {
-    installComponent(app, Button, options)
+    installComponent(app, Tree, options)
   }
 }
