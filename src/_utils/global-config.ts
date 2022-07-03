@@ -32,7 +32,7 @@ export const getComponentCls = (componentName?: string): string => {
   const prefix =
     instance?.appContext.config.globalProperties[GLOBAL_CONFIG_NAME]
       ?.classPrefix ?? CLASS_PREFIX
-  console.log(prefix)
+
   if (componentName) {
     return `${prefix}-${componentName}`
   }

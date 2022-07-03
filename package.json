@@ -43,6 +43,7 @@
     "vite": "^2.9.9",
     "vitepress": "^1.0.0-alpha.4",
     "vitest": "^0.16.0",
+    "husky": ">=6",
     "vue-tsc": "^0.34.7"
   },
   "lint-staged": {

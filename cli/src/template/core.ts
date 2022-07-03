@@ -2,7 +2,7 @@
 import { upperFirst } from './utils'
 
 export default function genCoreTemplate(name: string) {
-  const compName = 'S' + upperFirst(name)
+  const compName = upperFirst(name)
   const propsTypeName = upperFirst(name) + 'Props'
   const propsName = name + 'Props'
   const propsFileName = name + '-types'

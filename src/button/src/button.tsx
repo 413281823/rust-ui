@@ -7,13 +7,13 @@ export default defineComponent({
   props: buttonProps,
   setup(props: ButtonProps, { slots }) {
     const { size, type, disabled, block } = toRefs(props)
-    const blickClass: ComputedRef<string> = computed(() =>
+    const blockClass: ComputedRef<string> = computed(() =>
       block.value ? 's-btn--block' : ''
     )
     return () => {
       return (
         <button
-          class={`s-btn s-btn--${type.value} s-btn--${size.value} ${blickClass.value}`}
+          class={`s-btn s-btn--${type.value} s-btn--${size.value} ${blockClass.value}`}
           disabled={disabled.value}
         >
           {slots.default ? slots.default() : '按钮'}
