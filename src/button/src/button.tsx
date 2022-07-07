@@ -1,9 +1,10 @@
+/* eslint-disable vue/no-reserved-component-names */
 // button/src/button.tsx
 import { defineComponent, toRefs, computed, ComputedRef } from 'vue'
 import { buttonProps, ButtonProps } from '../button-type'
 import '../style/button.scss'
 export default defineComponent({
-  name: 'SButton',
+  name: 'Button',
   props: buttonProps,
   setup(props: ButtonProps, { slots }) {
     const { size, type, disabled, block } = toRefs(props)
