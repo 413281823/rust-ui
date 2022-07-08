@@ -9,8 +9,9 @@ export default defineComponent({
   props: treeProps,
   setup(props: TreeProps) {
     // 获取data
-    const { data } = toRefs(props)
-    const { toggleNode, getExpendedTree, getChildren } = useTree(data)
+    const { data, checkable } = toRefs(props)
+    const { toggleNode, getExpendedTree, getChildren, toggleCheckNode } =
+      useTree(data)
     const spanStyle = (treeNode: IInnerTreeNode) => {
       return {
         height: `${NODE_HEIGHT * getChildren(treeNode).length}px`,
@@ -62,6 +63,14 @@ export default defineComponent({
                       d="M384 192v640l384-320.064z"
                     ></path>
                   </svg>
+                )}
+                {/* 复选框 */}
+                {checkable.value && (
+                  <input
+                    type="checkbox"
+                    v-model={treeNode.checked}
+                    onClick={() => toggleCheckNode(treeNode)}
+                  ></input>
                 )}
                 {treeNode.label}
               </div>
