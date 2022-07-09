@@ -7,6 +7,7 @@ export interface ITreeNode {
   selected?: boolean
   checked?: boolean
   expanded?: boolean
+  inChecked?: boolean // 待选中
   disableSelect?: boolean
   disableCheck?: boolean
   disableToggle?: boolean

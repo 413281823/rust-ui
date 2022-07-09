@@ -10,11 +10,15 @@ export default defineComponent({
   setup(props: TreeProps) {
     // 获取data
     const { data, checkable } = toRefs(props)
-    const { toggleNode, getExpendedTree, getChildren, toggleCheckNode } =
-      useTree(data)
+    const {
+      toggleNode,
+      getExpendedTree,
+      toggleCheckNode,
+      getChildrenExpanded
+    } = useTree(data)
     const spanStyle = (treeNode: IInnerTreeNode) => {
       return {
-        height: `${NODE_HEIGHT * getChildren(treeNode).length}px`,
+        height: `${NODE_HEIGHT * getChildrenExpanded(treeNode).length}px`,
         left: `${NODE_INDENT * (treeNode.level - 1) + 11}px`,
         top: `${NODE_HEIGHT}px`
       }
@@ -26,7 +30,7 @@ export default defineComponent({
             // 循环输出节点
             getExpendedTree.value.map(treeNode => (
               <div
-                class="s-tree-node hover:bg-slate-100 relative leading-8"
+                class="s-tree-node hover:bg-slate-300 relative leading-8 flex items-center"
                 style={{
                   paddingLeft: `${NODE_HEIGHT * (treeNode.level - 1)}px`
                 }}
@@ -65,13 +69,28 @@ export default defineComponent({
                   </svg>
                 )}
                 {/* 复选框 */}
+                {/** 复选框 */}
                 {checkable.value && (
-                  <input
-                    type="checkbox"
-                    style={{ marginRight: '8px' }}
-                    v-model={treeNode.checked}
-                    onClick={() => toggleCheckNode(treeNode)}
-                  ></input>
+                  <span
+                    class={`relative ${
+                      treeNode.inChecked ? 's-tree__inChecked' : ''
+                    }`}
+                  >
+                    {treeNode.inChecked && (
+                      <span
+                        class="s-tree-checkbox__inner cursor-pointer"
+                        onClick={() => toggleCheckNode(treeNode)}
+                      >
+                        -
+                      </span>
+                    )}
+                    <input
+                      type="checkbox"
+                      style={{ marginRight: '8px' }}
+                      v-model={treeNode.checked}
+                      onClick={() => toggleCheckNode(treeNode)}
+                    ></input>
+                  </span>
                 )}
                 {treeNode.label}
               </div>
