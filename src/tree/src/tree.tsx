@@ -36,7 +36,6 @@ export default defineComponent({
                       width: '25px',
                       height: '16px',
                       display: 'inline-block',
-                      cursor: 'pointer',
                       transform: treeNode.expanded ? 'rotate(90deg)' : ''
                     }}
                     viewBox="0 0 1024 1024"
