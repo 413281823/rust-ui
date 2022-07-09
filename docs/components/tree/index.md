@@ -79,10 +79,7 @@
           id: 'packages',
           expanded: true,
           children: [
-            {
-              label: 'plugin-vue',
-              id: 'plugin-vue'
-            },
+          
             {
               label: 'vite',
               id: 'vite',

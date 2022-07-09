@@ -68,6 +68,7 @@ export default defineComponent({
                 {checkable.value && (
                   <input
                     type="checkbox"
+                    style={{ marginRight: '8px' }}
                     v-model={treeNode.checked}
                     onClick={() => toggleCheckNode(treeNode)}
                   ></input>
