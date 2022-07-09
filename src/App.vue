@@ -54,11 +54,14 @@ const tree = [
   }
 ]
 const TreeData = reactive(tree)
+const handleClick = (e: MouseEvent) => {
+  console.log(e)
+}
 </script>
 
 <template>
   <span> 梁乾阳 </span>
-  <SButton type="primary">haodx</SButton>
+  <SButton type="primary" @click="handleClick">haodx</SButton>
   <STree :data="TreeData" />
 </template>
 
