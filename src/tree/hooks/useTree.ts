@@ -9,13 +9,20 @@ export default function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
     const cur = innerData.find(item => item.id === node.id)
     if (cur) cur.expanded = !cur.expanded
   }
+  const getIndex = (node: IInnerTreeNode): number => {
+    if (!node) {
+      return -1
+    }
+
+    return innerData.findIndex(item => item.id === node.id)
+  }
   // 获取那些展开的节点列表
   const getChildren = (
     node: IInnerTreeNode,
     recursive = true
   ): IInnerTreeNode[] => {
     const result: IInnerTreeNode[] = []
-    const startIndex = innerData.findIndex(item => item.id === node.id)
+    const startIndex = getIndex(node)
     //找到它后面所有的子节点
     for (
       let i = startIndex + 1;
@@ -51,13 +58,7 @@ export default function useTree(node: Ref<ITreeNode[]> | ITreeNode[]) {
     console.log('result:', result)
     return result
   })
-  const getIndex = (node: IInnerTreeNode): number => {
-    if (!node) {
-      return -1
-    }
 
-    return innerData.findIndex(item => item.id === node.id)
-  }
   const getNode = (node: IInnerTreeNode): IInnerTreeNode | undefined => {
     return innerData.find(item => item.id === node.id)
   }
