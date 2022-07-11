@@ -2,7 +2,7 @@
 :::demo Link导航
   ```vue
   <template>
-    <SButton tag="div">link</SButton>
+    <SLink type="warning">primary</SLink>
   </template>
   ```
 :::

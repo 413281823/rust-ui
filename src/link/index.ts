@@ -1,14 +1,11 @@
 import { App } from 'vue'
-import LinkComponent from './src/linkComponent'
+import Link from './src/link'
 import { installComponent } from '../install'
 import type { SniperUIOptions } from '../_utils/global-config'
+export { Link }
 
-// 具名导出
-export { LinkComponent }
-
-// 导出插件
 export default {
   install(app: App, options?: SniperUIOptions) {
-    installComponent(app, LinkComponent, options)
+    installComponent(app, Link, options)
   }
 }
