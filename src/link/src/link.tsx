@@ -6,10 +6,10 @@ export default defineComponent({
   props: linkProps,
   emits: [],
   setup(props: LinkProps) {
-    const { data } = toRefs(props)
-    console.log(data.value, '参数')
+    const { type } = toRefs(props)
+    console.log(type, '参数')
     return () => {
-      return <a class="s-link">{data.value}</a>
+      return <a class="s-link">{type.value}</a>
     }
   }
 })
