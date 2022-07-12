@@ -1,8 +1,7 @@
 import type { PropType, ExtractPropTypes } from 'vue'
-type ILinkType = 'primary' | 'success' | 'warning'
 export const linkProps = {
   type: {
-    type: String as PropType<ILinkType>,
+    type: String,
     default: ''
   }
 } as const

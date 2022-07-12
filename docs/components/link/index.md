@@ -1,5 +1,5 @@
-# 按钮 - Button
-:::demo Link导航
+# 导航 - Link
+:::demo Basic
   ```vue
   <template>
     <SLink type="primary">primary</SLink>

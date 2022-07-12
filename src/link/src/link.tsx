@@ -7,9 +7,15 @@ export default defineComponent({
   emits: [],
   setup(props: LinkProps) {
     const { type } = toRefs(props)
-    console.log(type, '参数')
+    const handleClick = (data: string) => {
+      console.log(data)
+    }
     return () => {
-      return <a class="s-link">{type.value}</a>
+      return (
+        <a class="s-link" onClick={() => handleClick(type.value)}>
+          {type.value}
+        </a>
+      )
     }
   }
 })
