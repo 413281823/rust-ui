@@ -7,7 +7,7 @@ const NODE_INDENT = 24
 export default defineComponent({
   name: 'Tree',
   props: treeProps,
-  setup(props: TreeProps) {
+  setup(props: TreeProps, { slots }) {
     // 获取data
     const { data, checkable } = toRefs(props)
     const {
@@ -50,6 +50,8 @@ export default defineComponent({
                       width: '25px'
                     }}
                   />
+                ) : slots.icon ? (
+                  slots.icon({ nodeData: treeNode, toggleNode })
                 ) : (
                   <svg
                     style={{
@@ -92,7 +94,8 @@ export default defineComponent({
                     ></input>
                   </span>
                 )}
-                {treeNode.label}
+                {/** 标签 */}
+                {slots.content ? slots.content(treeNode) : treeNode.label}
               </div>
             ))
           }
